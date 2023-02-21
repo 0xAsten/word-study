@@ -39,6 +39,11 @@ body {
 	display: none;
 }
 
+.logo {
+	width: 30px;
+	height: 30px;
+}
+
 .icon {
 	width: 30px;
 	height: 30px;
@@ -75,6 +80,10 @@ body {
 
 .fullwithButton:hover {
 	background-color: #45a049;
+}
+
+.fullwithButton:disabled {
+	background-color: #ccc;
 }
 
 #output {
