@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Word Study Extension</title>
+  <head>
+    <title>Word Study Extension</title>
 
-  <script src="popup.js"></script>
-  <link rel="stylesheet" href="popup.css">
-</head>
-<body>
-  <h1>Word Study Extension</h1>
-  <p>Enter some English words:</p>
-  <input type="text" id="wordInput">
-  <button id="submitButton">Submit</button>
-  <div id="output"></div>
-</body>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <section>
+      <div class="header">
+        <img class="logo" src="./img/icons/icon48.png" alt="" />
+        <div class="apikey">
+          <p id="apiKeyStored">asds...das</p>
+          <img class="icon" id="editIcon" src="./img/icons/edit.png" alt="" />
+        </div>
+        <div class="apikey hidden">
+          <input type="text" id="apiKey" placeholder="GPT3 API Key" />
+          <img class="icon" id="saveIcon" src="./img/icons/save.png" alt="" />
+        </div>
+      </div>
+
+      <div class="inputForm">
+        <input type="text" id="wordInput" placeholder="Words" />
+        <button class="fullwithButton" id="submitButton">Submit</button>
+      </div>
+
+      <div class="output" id="output"></div>
+    </section>
+  </body>
 </html>

@@ -4,15 +4,15 @@
   "version": "1.0",
   "description": "A simple extension for studying English words",
   "icons": {
-    "16": "icon16.png",
-    "48": "icon16.png",
-    "128": "icon16.png"
+    "16": "./img/icons/icon16.png",
+    "32": "./img/icons/icon32.png",
+    "48": "./img/icons/icon48.png",
+    "128": "./img/icons/icon128.png"
   },
   "action": {
     "default_popup": "popup.html"
   },
   "permissions": [
-    "activeTab"
+    "storage"
   ]
-
 }

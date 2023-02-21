@@ -3,29 +3,67 @@ body {
 	font-size: 14px;
 	background-color: #f1f1f1;
 	width: 300px;
-  }
-  
-  h1 {
-	font-size: 24px;
-	margin: 10px 0;
-	text-align: center;
-  }
-  
-  p {
-	margin: 10px 0;
-	text-align: center;
-  }
-  
-  input[type=text] {
+	/* border: 2px solid #ccc; */
+	/* margin: auto; */
+	/* padding: 10px; */
+}
+
+.header {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px;
+	width: 280px;
+	/* height: 60px; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.apikey {
+	/* border: 2px solid #ccc; */
+	display: flex;
+	width: 130px;
+	justify-content:end;
+}
+
+.apikey input[type=text] {
+	width: 100%;
+	/* padding: 12px 20px; */
+	/* margin: 8px 0; */
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+}
+
+.hidden {
+	display: none;
+}
+
+.icon {
+	width: 30px;
+	height: 30px;
+}
+
+.inputForm {
+	width: 100%;
+	/* padding: 10px; */
+	background-color: #fff;
+}
+
+.inputForm input[type=text] {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
 	box-sizing: border-box;
 	border: 2px solid #ccc;
 	border-radius: 4px;
-  }
-  
-  button {
+}
+
+.output {
+	width: 100%;
+}
+
+.fullwithButton {
 	background-color: #4CAF50;
 	color: white;
 	padding: 12px 20px;
@@ -33,15 +71,15 @@ body {
 	border-radius: 4px;
 	cursor: pointer;
 	width: 100%;
-  }
-  
-  button:hover {
+}
+
+.fullwithButton:hover {
 	background-color: #45a049;
-  }
-  
-  #output {
+}
+
+#output {
 	margin: 10px 0;
-	padding: 10px;
+	/* padding: 10px; */
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	background-color: #fff;
@@ -49,4 +87,4 @@ body {
 	line-height: 1.5;
 	max-height: 200px;
 	overflow-y: scroll;
-  }
+}
