@@ -125,4 +125,8 @@ ul {
 	justify-content: space-between;
 	align-items: center;
 }
-
+ 
+ .note {
+ 	font-size: 12px;
+ 	color: #8f2424;
+ } 
