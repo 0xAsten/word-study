@@ -98,8 +98,9 @@ function storeApiKey() {
 
   if (apiKey.length) {
     chrome.storage.sync.set({ apiKey }, function () {
-      document.getElementById('apiKeyStored').textContent =
-        retainThreeCharacters(apiKey)
+      document.getElementById(
+        'apiKeyStored'
+      ).innerHTML = `<span>${retainThreeCharacters(apiKey)}</span>`
     })
   }
 }

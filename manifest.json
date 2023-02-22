@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Word Study Extension",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Improve your English with our Chrome extension! Enter words and get sentences powered by GPT-3 API. Fun, interactive and easy to use",
   "icons": {
     "16": "./img/icons/icon16.png",
