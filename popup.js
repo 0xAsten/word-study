@@ -49,6 +49,8 @@ function generateSentence() {
 
     // remove all the punctuations
     words = words.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ' ')
+    // remove all the extra spaces
+    words = words.replace(/\s{2,}/g, ' ')
 
     // make the submitButton disabled and grey out
     document.getElementById('submitButton').disabled = true
@@ -57,7 +59,28 @@ function generateSentence() {
     // make the submitButton enabled
     document.getElementById('submitButton').disabled = false
 
-    document.getElementById('output').textContent = sentence
+    // get element by id and append li tag to ul
+    const ulEle = document.getElementById('outputlist')
+    // clear the ul
+    ulEle.innerHTML = ''
+    sentence = sentence.split('\n').map((paragraph) => {
+      // insert li tag before each paragraph and add to ul
+      const liEle = document.createElement('li')
+      // highlight the words
+      words
+        .trim()
+        .split(' ')
+        .forEach((word) => {
+          paragraph = paragraph.replace(
+            new RegExp(word, 'ig'),
+            `<span class="highlight">${word}</span>`
+          )
+        })
+      // apend paragraph to li tag with highlight
+      liEle.innerHTML = paragraph
+      // liEle.appendChild(paragraph)
+      ulEle.appendChild(liEle)
+    })
   })
 }
 
@@ -84,11 +107,11 @@ function storeApiKey() {
 // a function to request GPT API and get the repsonse
 async function requestGPTAPI(apiKey, words, completions) {
   const promptTemplate =
-    'Write 5 paragraphs using as common and simple words as possible, each paragraph containing all the following words without prefacing it with anything:'
+    'Write 5 paragraphs using as common and simple words as possible, each paragraph containing all the following words, with nothing before the paragraph:'
   const prompt = `${promptTemplate}\n${words}`
   const url = 'https://api.openai.com/v1/completions'
   const data = {
-    model: 'text-davinci-003',
+    model: 'text-babbage-001',
     prompt: prompt,
     max_tokens: 1000,
     temperature: 0.8,
@@ -108,13 +131,13 @@ async function requestGPTAPI(apiKey, words, completions) {
       body: JSON.stringify(data),
     })
 
+    const res = await response.json()
     if (response.status !== 200) {
-      const res = await response.json()
       throw new Error(res.error.message)
     }
 
     console.log(res)
-    return res.data
+    return res.choices[0].text
   } catch (error) {
     return `OpenAI API Error: ${error.message}`
   }
